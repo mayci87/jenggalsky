@@ -3,35 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jenggala Transport | Rental Mobil, Tour, Travel Surabaya-Malang</title>
+  <title>JenggalaSky Transport | Rental Mobil, Tour, Travel Surabaya-Malang</title>
   <meta name="description" content="Booking rental mobil, paket tour, dan travel Surabaya-Malang dengan checkout cepat via WhatsApp." />
   <meta name="keywords" content="rental mobil surabaya, rental mobil malang, travel surabaya malang, paket tour bromo" />
-  <meta name="theme-color" content="#4db6ff" />
-  <meta property="og:title" content="Jenggala Transport" />
+  <meta name="theme-color" content="#1d9bf0" />
+  <meta property="og:title" content="JenggalaSky Transport" />
   <meta property="og:description" content="Booking cepat via WhatsApp: Rental, Tour, Shuttle." />
   <meta property="og:type" content="website" />
-  <link rel="canonical" href="https://example.com/" />
+  <link rel="canonical" href="https://jenggalsky.vercel.app/" />
   <link rel="preconnect" href="https://api.whatsapp.com" />
   <link rel="stylesheet" href="styles.css" />
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Jenggala Transport",
-    "areaServed":["Surabaya","Malang"],
-    "telephone":"+6281234567890",
-    "url":"https://example.com"
-  }
-  </script>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#" class="brand">Jenggala<span>Transport</span></a>
-      <nav>
+      <a href="#" class="brand">Jenggal<span>Sky</span></a>
+      <button class="menu-btn" aria-label="toggle menu" id="menuBtn">☰</button>
+      <nav id="mainNav">
         <a href="#layanan">Layanan</a>
+        <a href="#keunggulan">Keunggulan</a>
         <a href="#booking">Booking</a>
-        <a href="#faq">FAQ</a>
         <a href="admin.html" class="link-admin">Admin</a>
       </nav>
     </div>
@@ -41,34 +32,56 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="badge">Fast Response • Full CTWA</p>
-          <h1>Rental Mobil, Paket Tour & Travel Surabaya-Malang</h1>
-          <p class="sub">Website ringan, harga transparan, dan checkout paling mudah via WhatsApp dalam 1 menit.</p>
+          <p class="badge">Fast Response • Checkout via WhatsApp</p>
+          <h1>Booking Mobil Rental, Tour, dan Travel <span>Tanpa Ribet</span></h1>
+          <p class="sub">UI lebih rapi, loading ringan, dan flow booking dibuat sesingkat mungkin agar user langsung chat CS.</p>
           <div class="hero-cta">
-            <a href="#booking" class="btn btn-primary">Cek Ketersediaan via WA</a>
-            <a href="#layanan" class="btn btn-ghost">Lihat Layanan</a>
+            <a href="#booking" class="btn btn-primary">Cek Ketersediaan</a>
+            <a href="#layanan" class="btn btn-ghost">Lihat Paket</a>
+          </div>
+          <div class="trust-row">
+            <span>✅ Harga transparan</span>
+            <span>✅ Armada terawat</span>
+            <span>✅ CS aktif setiap hari</span>
           </div>
         </div>
-        <div class="hero-card">
-          <h2>Estimasi Cepat</h2>
-          <p>Mulai dari:</p>
+        <aside class="hero-card">
+          <h2>Estimasi Harga</h2>
           <ul>
-            <li>Rental Mobil: <strong>Rp350.000/hari</strong></li>
-            <li>Travel SBY-MLG: <strong>Rp120.000/orang</strong></li>
-            <li>Paket Bromo: <strong>Rp450.000/orang</strong></li>
+            <li><b>Rental Harian:</b> mulai Rp350.000</li>
+            <li><b>Travel SBY-MLG:</b> mulai Rp120.000</li>
+            <li><b>Paket Bromo:</b> mulai Rp450.000</li>
           </ul>
-        </div>
+          <a class="btn btn-primary btn-block" href="#booking">Booking Sekarang</a>
+        </aside>
       </div>
     </section>
 
     <section id="layanan" class="container section">
-      <h2>Layanan Utama</h2>
+      <div class="section-head">
+        <h2>Layanan Utama</h2>
+        <div class="filter-group" id="filterGroup">
+          <button data-filter="all" class="active">Semua</button>
+          <button data-filter="Rental Mobil">Rental</button>
+          <button data-filter="Paket Tour">Tour</button>
+          <button data-filter="Travel Surabaya-Malang">Travel</button>
+        </div>
+      </div>
       <div id="serviceGrid" class="grid"></div>
     </section>
 
+    <section id="keunggulan" class="container section">
+      <h2>Kenapa Pilih Kami</h2>
+      <div class="benefit-grid">
+        <article class="benefit">⚡ Proses booking 1 menit</article>
+        <article class="benefit">💬 Rotator WA agar respon lebih cepat</article>
+        <article class="benefit">📍 Fokus Surabaya-Malang & destinasi wisata</article>
+      </div>
+    </section>
+
     <section id="booking" class="container section">
-      <h2>Checkout via WhatsApp (CTWA)</h2>
-      <form id="bookingForm" class="booking-form">
+      <h2>Form Booking CTWA</h2>
+      <form id="bookingForm" class="booking-form" novalidate>
         <label>Layanan
           <select name="serviceType" required>
             <option value="Rental Mobil">Rental Mobil</option>
@@ -76,7 +89,7 @@
             <option value="Travel Surabaya-Malang">Travel Surabaya-Malang</option>
           </select>
         </label>
-        <label>Nama
+        <label>Nama Lengkap
           <input name="name" required placeholder="Nama lengkap" />
         </label>
         <label>No WhatsApp
@@ -86,28 +99,21 @@
           <input name="datetime" type="datetime-local" required />
         </label>
         <label>Lokasi Jemput / Tujuan
-          <input name="route" required placeholder="Surabaya Kota → Malang Kota" />
+          <input name="route" required placeholder="Contoh: Surabaya Kota → Malang Kota" />
         </label>
-        <label>Catatan
+        <label>Catatan Tambahan
           <textarea name="notes" rows="3" placeholder="Contoh: butuh kursi bayi"></textarea>
         </label>
-        <button class="btn btn-primary" type="submit">Lanjut Booking via WhatsApp</button>
+        <button class="btn btn-primary" type="submit">Lanjut ke WhatsApp</button>
       </form>
-      <small>Dengan klik tombol, Anda diarahkan ke WhatsApp CS aktif secara otomatis (rotator).</small>
-    </section>
-
-    <section id="faq" class="container section">
-      <h2>FAQ</h2>
-      <details><summary>Apakah bisa booking mendadak?</summary><p>Bisa, selama unit/jadwal tersedia.</p></details>
-      <details><summary>Apakah harga bisa nego?</summary><p>Untuk durasi panjang dan corporate bisa diskusi di WA.</p></details>
-      <details><summary>Apakah bisa lepas kunci?</summary><p>Tersedia opsi lepas kunci untuk area tertentu dengan syarat.</p></details>
+      <p class="hint">Data booking tersimpan ke dashboard admin dan otomatis diarahkan ke CS aktif.</p>
     </section>
   </main>
 
   <a id="stickyWA" class="sticky-wa" href="#booking">💬 Booking via WA</a>
 
   <footer class="footer">
-    <div class="container">© 2026 Jenggala Transport • Surabaya & Malang</div>
+    <div class="container">© 2026 JenggalSky Transport • Surabaya & Malang</div>
   </footer>
 
   <script src="app.js"></script>
