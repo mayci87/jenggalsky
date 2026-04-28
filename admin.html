@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel | Jenggala Transport</title>
+  <title>Admin Panel | JenggalSky</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="index.html" class="brand">Jenggala<span>Transport</span></a>
-      <nav><a href="index.html">← Kembali ke Website</a></nav>
+      <a href="index.html" class="brand">Jenggal<span>Sky</span></a>
+      <nav><a href="index.html">← Lihat Website</a></nav>
     </div>
   </header>
 
   <main class="container section">
-    <h1>Admin Panel</h1>
+    <h1>Admin Dashboard</h1>
+    <p class="hint">Kelola CS, produk, dan follow up lead dari sini.</p>
     <div class="stats" id="stats"></div>
 
     <section class="panel-grid">
       <article class="panel">
-        <h2>WA Rotator (Round-Robin + Performa CS)</h2>
+        <h2>WA Rotator (Round Robin)</h2>
         <form id="agentForm" class="stack">
           <input name="name" placeholder="Nama CS" required />
           <input name="number" placeholder="62812xxxx" required />
@@ -37,8 +38,8 @@
             <option value="Paket Tour">Paket Tour</option>
             <option value="Travel Surabaya-Malang">Travel Surabaya-Malang</option>
           </select>
-          <input name="title" placeholder="Nama paket/mobil" required />
-          <input name="price" placeholder="Harga mulai (angka)" type="number" required />
+          <input name="title" placeholder="Nama layanan" required />
+          <input name="price" placeholder="Harga mulai" type="number" required />
           <input name="desc" placeholder="Deskripsi singkat" required />
           <button class="btn btn-primary" type="submit">Tambah Produk</button>
         </form>
@@ -46,7 +47,7 @@
     </section>
 
     <section class="panel">
-      <h2>Leads & Follow Up</h2>
+      <h2>Leads Masuk</h2>
       <div id="leadList"></div>
     </section>
   </main>
