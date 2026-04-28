@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Jenggala Transport</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">Jenggala<span>Transport</span></a>
+      <nav><a href="index.html">← Kembali ke Website</a></nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Admin Panel</h1>
+    <div class="stats" id="stats"></div>
+
+    <section class="panel-grid">
+      <article class="panel">
+        <h2>WA Rotator (Round-Robin + Performa CS)</h2>
+        <form id="agentForm" class="stack">
+          <input name="name" placeholder="Nama CS" required />
+          <input name="number" placeholder="62812xxxx" required />
+          <button class="btn btn-primary" type="submit">Tambah CS</button>
+        </form>
+        <div id="agentList"></div>
+      </article>
+
+      <article class="panel">
+        <h2>Tambah Produk</h2>
+        <form id="productForm" class="stack">
+          <select name="type">
+            <option value="Rental Mobil">Rental Mobil</option>
+            <option value="Paket Tour">Paket Tour</option>
+            <option value="Travel Surabaya-Malang">Travel Surabaya-Malang</option>
+          </select>
+          <input name="title" placeholder="Nama paket/mobil" required />
+          <input name="price" placeholder="Harga mulai (angka)" type="number" required />
+          <input name="desc" placeholder="Deskripsi singkat" required />
+          <button class="btn btn-primary" type="submit">Tambah Produk</button>
+        </form>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Leads & Follow Up</h2>
+      <div id="leadList"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
